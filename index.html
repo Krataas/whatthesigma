@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What this?</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <video id="bgVideo" autoplay muted loop class="bg-video">
+    <source src="background.mp4" type="video/mp4"/>
+  </video>
+  <div class="overlay"></div>
+
+  
+  <div class="sakura-container"></div>
+
+  
+  <div id="mainContent" class="main-content hidden">
+    <div class="content-box">
+      <h1>Một lời nhắn ngày 20/10</h1>
+      <p class="greeting-text">
+        <span id="typedText"></span><span class="cursor"></span>
+      </p>
+    </div>
+  </div>
+
+  <audio id="audioPlayer" loop>
+    <source id="audioSource" src="" type="audio/mpeg"/>
+  </audio>
+  <script src="script.js"></script>
+</body>
+</html>
