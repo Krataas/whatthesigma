@@ -68,10 +68,31 @@ function makeSakura(){
     },600);
   },3000);
 }
+function startHeartParticles() {
+  let cont = document.querySelector('.heart-container');
+  if(!cont) { 
+    cont = document.createElement('div');
+    cont.className = 'heart-container';
+    document.body.appendChild(cont);
+  }
+  setInterval(()=>{
+    const e = document.createElement('div');
+    e.className = 'heart';
+    e.innerHTML = '❤️';
+    e.style.left = (8 + Math.random()*84) + 'vw';
+    e.style.bottom = '-28px';
+    e.style.fontSize = (13 + Math.random()*7) + 'px';
+    e.style.opacity = (0.7 + Math.random()*0.3).toString();
+    e.style.animationDuration = (1.7 + Math.random()*1.6) + 's';
+    cont.appendChild(e);
+    setTimeout(()=>{ if(e.parentNode) e.parentNode.removeChild(e); }, 2500);
+  }, 160 + Math.random()*180);
+}
 
 window.addEventListener('DOMContentLoaded', ()=>{
   initAudio();
   makeSakura();
+  startHeartParticles();
   document.body.addEventListener('touchstart',()=>{
     const v=document.getElementById('bgVideo');
     if(v.paused)v.play();

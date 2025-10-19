@@ -103,3 +103,20 @@ h1 {
     opacity: 0;
   }
 }
+.heart-container {
+  position: fixed;
+  left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 105;
+}
+.heart {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: heartUp linear forwards;
+}
+@keyframes heartUp {
+  0%   { transform: translateY(0) scale(1); opacity:1; }
+  80%  { opacity:0.9; }
+  100% { transform: translateY(-88vh) scale(1.12); opacity:0; }
+}
